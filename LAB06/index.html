@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №6 – Взаємодія з MySQL (варіант 9)</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        code { background-color: #f5f5f5; padding: 2px 4px; border-radius: 4px; }
+        img.screenshot { border: 1px solid #ccc; max-width: 100%; height: auto; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Звіт з лабораторної роботи №6</h1>
+    <p><strong>Тема:</strong> Взаємодія з MySQL у PHP.</p>
+    <p><strong>Виконавець:</strong> Андрій Клим (група KN1‑B22)</p>
+    <p><strong>Дата виконання:</strong> 25 серпня 2025 р.</p>
+    <p><strong>Варіант:</strong> 9</p>
 
+    <h2>Завдання за варіантом</h2>
+    <ol>
+        <li>
+            Створити базу даних <code>University</code> та таблицю <code>Courses</code> зі стовпцями: <em>id</em>, <em>course_name</em>, <em>duration</em>, <em>credits</em>.
+        </li>
+        <li>
+            Реалізувати функціонал для додавання нового курсу та відображення списку всіх курсів.
+        </li>
+        <li>
+            Додати можливість видалення курсів, які не активні більше 2 років.
+        </li>
+    </ol>
+
+    <h2>Розроблені скрипти</h2>
+    <p>У папці знаходиться файл <a href="courses.php">courses.php</a>, який реалізує всі три задачі. При першому запуску скрипт створює базу даних та таблицю, після чого відображає форму для додавання нового курсу, список наявних курсів і посилання для видалення застарілих записів.</p>
+    <p>Приклад виводу:</p>
+    <img src="courses_output.png" alt="Приклад списку курсів" class="screenshot">
+
+    <h2>Налаштування MySQL</h2>
+    <p>Скрипт використовує розширення <code>PDO</code> для підключення до MySQL. Перед використанням потрібно переконатися, що MySQL встановлено й працює, а в PHP активовано розширення <code>pdo_mysql</code>. У файлі <code>courses.php</code> вкажіть правильні параметри підключення до сервера бази даних (змінні <code>$host</code>, <code>$user</code>, <code>$pass</code>).</p>
+    <p>За відсутності таблиці чи бази даних скрипт автоматично створить їх. Для видалення курсів, що неактивні понад два роки, таблиця містить поле <code>last_active</code>, яке оновлюється при додаванні курсу. Дата порівнюється з поточною датою.</p>
+
+    <h2>Публікація на GitHub</h2>
+    <p>1. У вашому репозиторії <code>PHPLABS‑KLYM</code> створіть папку <code>LAB06</code> і завантажте до неї файли: <code>courses.php</code>, <code>courses_output.png</code> та цей звіт <code>index.html</code>.</p>
+    <p>2. Посилання на файл <code>index.html</code> з папки <code>LAB06</code> буде вашим звітом для Moodle.</p>
+</body>
+</html>
